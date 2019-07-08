@@ -1,29 +1,12 @@
+# This is Git's per-user configuration file.
 [user]
-	name = Kira Evans
-	email = contact@kne42.me
-
-[github]
-	user = kne42
-
-[core]
-	editor = nano
-	excludesfile = ~/.gitignore_global
-
-[merge]
-	log = true
-
-[push]
-	followTags = true
-
-[url "git@github.com:"]
-	insteadOf = "gh-priv:"
-	pushInsteadOf = "gh:"
-	pushInsteadOf = "git://github.com/"
-	pushInsteadOf = "https://github.com/"
-
-[url "git://github.com/"]
-	insteadOf = "gh:"
-	insteadOf = "https://github.com/"
-
-[include]
-	path = ~/.gitconfig_local
+	email = neilgoldader@gmail.com
+	name = Neil Goldader
+# Please adapt and uncomment the following lines:
+#	name = Neil Goldader
+#	email = neil.goldader@lacuna.ai
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

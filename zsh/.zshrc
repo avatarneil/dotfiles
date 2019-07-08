@@ -1,9 +1,14 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export AWS_REGION=us-west-2
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/Users/neilgoldader/Library/Python/2.7/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
+export ZSH="/Users/neilgoldader/.oh-my-zsh"
+export AWS_REGION=us-west-1
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -62,9 +67,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,28 +100,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/.conda/bin:$PATH"
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-
-PREV=$(pwd)
-
-function back () { cd $PREV; }
-cd ~/Projects/
-
-function myssh { cat $SSH_KEY_PATH.pub | pbcopy; }
-
-open-pymodule () {
-	MODULE=$1
-	open `python -c "import $MODULE; print($MODULE.__file__)"`
-}
-
-relpath () { echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"; }
-
-clean () {
-  find . -regex '^.*~$' -delete
-  find . -regex '^.*#.*#$' -delete
-}
-
 eval $(thefuck --alias)
 
-source ~/.zsh_local
+export PATH="$PATH:$HOME/Downloads/flutter/bin"
+
+export NODE_PATH=$NODE_PATH:`npm root -g`
+# Lines configured by zsh-newuser-install
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/neilgoldader/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+alias tb="nc termbin.com 9999 | pbcopy"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
