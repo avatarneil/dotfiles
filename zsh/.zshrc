@@ -120,3 +120,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
+function cut-draft-pr () {
+    yarn build
+    yarn test
+    git commit -am $1
+    hub pull-request —draft
+}
