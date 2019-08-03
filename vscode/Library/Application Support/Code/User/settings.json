@@ -89,5 +89,6 @@
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.colorTheme": "Monokai Pro (Filter Machine)"
+  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+  "workbench.startupEditor": "newUntitledFile"
 }
